@@ -1,5 +1,9 @@
 export const categories = [
   {
+    name: 'gaming',
+    image: 'https://i.pinimg.com/564x/9f/fd/55/9ffd5508a83e55ee25c48ff2ef8e4d54.jpg',
+  },
+  {
     name: 'cars',
     image: 'https://i.pinimg.com/750x/eb/47/44/eb4744eaa3b3ccd89749fa3470e2b0de.jpg',
   },
