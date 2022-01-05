@@ -16,7 +16,7 @@ const Feed = () => {
     
     // set logic to fetch all pins for a specific category
     if(categoryId) {
-      const query = searchQueryQuery(categoryId)
+      const query = searchQuery(categoryId)
 
       client.fetch(query)
         .then((data) => {
@@ -33,6 +33,9 @@ const Feed = () => {
   }, [categoryId])
 
   if(loading) return <Spinner message="Please wait while we add new ideas to your feed!" />
+  
+  if(!pins?.length) return <h2>No pins available</h2>
+
   return (
     <div>
       {pins && <MasonryLayout pins={pins} />}
