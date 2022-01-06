@@ -63,6 +63,24 @@ const Login = () => {
                             cookiePolicy='single_host_origin'
                         />
                     </div>
+                    <br />
+                    <div>
+                        <a
+                            href="./OtherLogin"
+                            type="submit"
+                            className="bg-mainColor p-3 rounded-lg cursor-pointer outline-none inline-block mr-5"
+                            
+                        >
+                            Sign in
+                        </a>
+                        <a
+                            href="./Register"
+                            type="submit"
+                            className="bg-mainColor p-3 rounded-lg cursor-pointer outline-none inline-block ml-5"
+                        >
+                            Register
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
