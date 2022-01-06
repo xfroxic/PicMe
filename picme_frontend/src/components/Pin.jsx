@@ -15,7 +15,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save} }) => {
 
   // adding !! to the beginning of this statement has it return a boolean value
   // adding ? before .length handles pins that haven't been liked by anyone
-  const alreadySaved = !!(save?.filter((item) => item.postedBy._id === user.googleId))?.length
+  const alreadySaved = !!(save?.filter((item) => item?.postedBy?._id === user?.googleId))?.length
 
   const savePin = (id) => {
     if (!alreadySaved) {
@@ -29,10 +29,10 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save} }) => {
         // insert document
         .insert('after', 'save[-1]', [{
           _key: uuidv4(),
-          userId: user.googleId,
+          userId: user?.googleId,
           postedBy: {
             _type: 'postedBy',
-            _ref: user.googleId
+            _ref: user?.googleId
           }
         }])
         // commit changes to Sanity
@@ -57,7 +57,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save} }) => {
         onMouseEnter={() => setPostHovered(true)}
         onMouseLeave={() => setPostHovered(false)}
         onClick={() => navigate(`/pin-detail/${_id}`)}
-        className="relative cursor-zoom-in w-auto hover:shadow-lg rounded-lg overflow-hidden transition-all duration-500 ease-in-out"
+        className="relative cursor-pointer w-auto hover:shadow-lg rounded-lg overflow-hidden transition-all duration-500 ease-in-out"
       >
         <img className="rounded-lg w-full" src={urlFor(image).width(250).url()} alt="user-post" />
         {postHovered && (
@@ -107,7 +107,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save} }) => {
                     </a>
                   )}
                   {/* give user who posted pin option to delete post */}
-                  {postedBy?._id === user.googleId && (
+                  {postedBy?._id === user?.googleId && (
                     <button
                       type="button"
                       onClick={(e) => {

@@ -133,7 +133,6 @@ const UserProfile = () => {
         </div>
 
       </div>
-      UserProfile
     </div>
   )
 }
