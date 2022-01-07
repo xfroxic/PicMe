@@ -64,7 +64,7 @@ const Login = () => {
                         />
                     </div>
                     <br />
-                    <div>
+                    {/* <div>
                         <a
                             href="./OtherLogin"
                             type="submit"
@@ -80,7 +80,7 @@ const Login = () => {
                         >
                             Register
                         </a>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
