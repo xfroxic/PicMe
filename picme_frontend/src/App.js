@@ -13,7 +13,7 @@ const App = () => {
     useEffect(() => {
        const user = fetchUser()
 
-    //    if (!user) navigate('/login')
+       if (!user) navigate('/login')
     }, [])
 
     return (
